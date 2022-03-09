@@ -1,0 +1,33 @@
+<div *ngIf="!isLoggedIn">
+    <form *ngIf="isRegistred" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+        <h1>Inicia Sesión</h1>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" ngModel required #username="ngModel">
+        <label for="password">password</label>
+        <input type="password" name="password" id="pass" ngModel required #password="ngModel">
+        <input type="submit" value="Iniciar Sesión">
+        o <a (click)="OpenRegisterModal()" >registrate</a>
+    </form>
+
+    <form *ngIf="!isRegistred" #f="ngForm" (ngSubmit)="onSubmitReg(f)" novalidate>
+        <h1>Registrate</h1>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" ngModel required #username="ngModel">
+        <label for="password">password</label>
+        <input type="password" name="password" id="pass" ngModel required #password="ngModel">
+        <label for="password2">check your password</label>
+        <input type="password" name="password2" id="pass2" ngModel required #password2="ngModel">
+        <label for="fullname">Fullname</label>
+        <input type="text" name="fullname" id="fullname" ngModel required #fullname="ngModel">
+        <input type="radio" name="role" id="admin" value="admin">
+            <label for="admin">admin</label>
+        <input type="radio" name="role" id="subscriber">
+            <label for="subscriber">subscriber</label>
+        <input type="submit" value="Registrarse">
+        o <a (click)="OpenRegisterModal()" >Inicia Sesión</a>
+    </form>
+</div>
+
+<div *ngIf="isLoggedIn">
+    <button (click)="CloseSesion()">Cerrar sesión</button>
+</div>

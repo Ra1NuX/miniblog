@@ -1,0 +1,80 @@
+
+    div#main{
+        display: grid;
+        grid-template-columns: 5fr 1fr;
+        margin: 10px;
+    }
+    article{
+        background-color: rgba(255, 0, 0, 0.185);
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 1px 5px 1px #08020121;
+        border: 1px solid white;
+    }
+    article h2{
+        color: rgb(255, 0, 0);
+        font-weight: bold;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.164);
+        padding-bottom: 3px;
+    }
+    article>h3{
+        color: rgb(75, 27, 27);
+        font-size: 1.2rem;
+        padding-left: 10px;
+    }
+
+    .creationdate{
+        display: flex;
+        justify-content: flex-end;
+    }
+ .post-header{
+    display: grid;
+    grid-template-columns: 20fr 1fr 1fr;
+ }
+ form{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px 1px #08020121;
+    border: 1px solid white;
+    background-color: #efefef;
+ }
+ form>input, form>textarea{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px 1px #08020121;
+    border: 1px solid white;
+ }
+ form>label{
+     color: rgb(119, 30, 30);
+     font-weight: bold;
+     font-size: large;
+ }
+ form>input[type="submit"]{
+     background-color: #fff;
+ }
+ button{
+    align-self: center;
+    justify-self: flex-end;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px 1px #08020121;
+    border: 1px solid white;
+    max-height: 40px;
+    max-width: 40px;
+
+ }
+ button:nth-last-of-type(1){
+     background-color: rgb(255, 0, 0);
+     color: white;
+     font-weight: bold;
+     padding-top: -2px;
+     justify-self: center;
+ }
+ button:first-of-type{
+    max-width: 60px;
+ }
+

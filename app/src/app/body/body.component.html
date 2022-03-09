@@ -1,0 +1,33 @@
+<div id="main">
+    <section>
+        <article *ngFor="let post of posts">
+            <div class="post-header">
+                <h2>{{post.title}}</h2>
+                <button *ngIf="isLoggedIn" (click)="openModal(post._id)">Editar</button>
+                <button *ngIf="isLoggedIn" (click)="deleteItem(post._id)">&times;</button>
+            </div>
+            <h3>{{post.description}}</h3>
+
+            <div class="creationdate"><div timeago [date]="1553683912689"></div></div>
+
+            <form *ngIf="editMode && post._id == itemToEdit" #fd="ngForm" (ngSubmit)="editItem(fd,post._id)">
+                <label for="edit-title">Edita el titulo del post</label>
+                <input type="text" name="title" placeholder={{post.title}} id="edit-title" ngModel required #title="ngModel">
+                <label for="edit-title">Edita el contenido del post</label>
+                <textarea type="text" name="content" placeholder={{post.description}} id="edit-content" ngModel required
+                    #content="ngModel"></textarea>
+                <input type="submit" value="Editar Post">
+            </form>
+        </article>
+        <form *ngIf="isLoggedIn" #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <label for="title">Titulo del nuevo post</label>
+            <input type="text" name="title" id="title" ngModel required #title="ngModel">
+            <label for="title">Contenido del post</label>
+            <textarea name="content" id="content" ngModel required #content="ngModel"></textarea>
+            <input type="submit" value="Crear nuevo post">
+        </form>
+    </section>
+    <aside>
+        <app-login></app-login>
+    </aside>
+</div>
